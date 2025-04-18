@@ -1,7 +1,24 @@
 $(function () {
-    $('#customer').select2({ placeholder: 'Select Customer…' });
-    $('#job').select2({ placeholder: 'Select Job…' });
-    $('#location').select2({ placeholder: 'Select LSD…' });
+    $.getJSON('./api/get_customers.php', function (data) {
+        $.each(data, function (_, v) {
+            $('#customer').append('<option value="' + v.id + '">' + v.text + '</option>');
+        });
+    });
+    
+    $('#customer').select2({
+        placeholder: 'Select Customer…',
+        minimumResultsForSearch: Infinity
+    });
+    
+    $('#job').select2({
+        placeholder: 'Select Job…',
+        minimumResultsForSearch: Infinity
+    });
+    
+    $('#location').select2({
+        placeholder: 'Select LSD…',
+        minimumResultsForSearch: Infinity
+    });
 
     $('#customer').on('change', function () {
         const id = $(this).val();
