@@ -44,9 +44,9 @@
 
     <div class="col-md-1"></div>
 
-    <label for="area_field" class="col-md-2 col-form-label">Area/Field:</label>
+    <label for="area" class="col-md-2 col-form-label">Area/Field:</label>
     <div class="col-md-3">
-        <input id="area_field" type="text" class="form-control" name="area_field">
+        <input id="area" type="text" class="form-control" name="area">
     </div>
 </div>
 

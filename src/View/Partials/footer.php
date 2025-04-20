@@ -4,8 +4,9 @@
 
 <script src="js/project.js?v=17"></script>
 <script src="js/editor.js?v=9"></script>
-<script src="js/labour.js?v=11"></script>
-<script src="js/truck.js?v=1"></script>
-<script src="js/miscellaneous.js?v=1"></script>
+<script src="js/labour.js?v=19"></script>
+<script src="js/truck.js?v=4"></script>
+<script src="js/miscellaneous.js?v=4"></script>
+<script src="js/submit.js?v=4"></script>
 </body>
 </html>

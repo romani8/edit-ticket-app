@@ -1,6 +1,5 @@
 <h5 class="mt-5 mb-3">Labour</h5>
 
-<!-- labels -->
 <div class="row g-2">
   <div class="col-md-2"><label class="form-label">Staff</label></div>
   <div class="col-md-2"><label class="form-label">Position</label></div>
