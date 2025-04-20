@@ -45,32 +45,64 @@
         var qty = parseFloat($qty.val()) || 0;
         var rate = parseFloat($rate.val()) || 0;
         $total.val((qty * rate).toFixed(2));
+        calculateTruckSubTotal();
       }
     }
   
-    function addTruckRow() {
-      var $template = $('.truck-row').first();
-      var newIndex = $('.truck-row').length;
-      var $clone = $template.clone(true, true).attr('data-index', newIndex);
-  
-      $clone.find('[name]').each(function () {
-        var $el = $(this);
-        var oldName = $el.attr('name');
-        var newName = oldName.replace(/\[\d+\]/, '[' + newIndex + ']');
-        $el.attr('name', newName).val('');
-        if ($el.is('select')) {
-          $el.empty();
-        }
+    function calculateTruckSubTotal() {
+      var subtotal = 0;
+      $('.truck-row').each(function () {
+        var rowTotal = parseFloat($(this).find('.total').val()) || 0;
+        subtotal += rowTotal;
       });
-  
-      $('#truck-section').append($clone);
-      initTruckRow($clone);
+      $('#truck-subtotal').val(subtotal.toFixed(2));
     }
+  
+    function addTruckRow() {
+        var $template = $('.truck-row').first();
+        var newIndex = $('.truck-row').length;
+        var $clone = $template.clone(false).attr('data-index', newIndex);
+      
+        $clone.find('[name]').each(function () {
+          var $el = $(this);
+          var oldName = $el.attr('name');
+          if (!oldName) return;
+      
+          var newName = oldName.replace(/\[\d+\]/, '[' + newIndex + ']');
+          $el.attr('name', newName);
+      
+          if (
+            oldName.includes('[quantity]')
+          ) {
+            $el.val('');
+          }
+      
+          if (
+            oldName.includes('[rate]') ||
+            oldName.includes('[total]')
+          ) {
+            $el.val('');
+          }
+      
+          if ($el.is('select')) {
+            var placeholder = $el.find('option:first').clone();
+            $el.empty().append(placeholder).val('');
+          }
+        });
+      
+        $clone.find('.select2-container').remove();
+        $clone.find('select').show();
+      
+        $('#truck-section').append($clone);
+        initTruckRow($clone);
+        calculateTruckSubTotal();
+      }      
   
     function removeTruckRow(btn) {
       var rows = $('.truck-row');
       if (rows.length > 1) {
         $(btn).closest('.truck-row').remove();
+        calculateTruckSubTotal();
       }
     }
   
@@ -82,6 +114,7 @@
       $('.truck-row').each(function () {
         initTruckRow(this);
       });
+      calculateTruckSubTotal();
     });
   })();
   
