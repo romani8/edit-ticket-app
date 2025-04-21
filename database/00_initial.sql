@@ -1,3 +1,5 @@
+CREATE DATABASE IF NOT EXISTS edit_ticket_db;
+
 CREATE USER 'ticket_user'@'localhost'
 IDENTIFIED WITH mysql_native_password BY 'P@ssword1#';
 
