@@ -9,7 +9,7 @@
 
     $truck.html('<option value="">Select Truck...</option>');
 
-    $.getJSON('./api/get_trucks.php', function (truckList) {
+    $.getJSON('./api.php?endpoint=get_trucks', function (truckList) {
       $.each(truckList, function (_, item) {
         var $option = $('<option>')
           .val(item.id)

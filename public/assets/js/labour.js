@@ -10,7 +10,7 @@
     $staff.html('<option value="">Select Staff...</option>');
     $position.prop('disabled', true).html('<option value="">Select Position...</option>');
 
-    $.getJSON('./api/get_staff.php', function (staffList) {
+    $.getJSON('./api.php?endpoint=get_staff', function (staffList) {
       $.each(staffList, function (i, staff) {
         $staff.append('<option value="' + staff.id + '">' + staff.text + '</option>');
       });
@@ -28,7 +28,7 @@
 
       if (!staffId) return;
 
-      $.getJSON('./api/get_staff_positions.php', { staff_id: staffId }, function (positions) {
+      $.getJSON('./api.php?endpoint=get_staff_positions', { staff_id: staffId }, function (positions) {
         $.each(positions, function (i, pos) {
           var $option = $('<option>')
             .val(pos.id)

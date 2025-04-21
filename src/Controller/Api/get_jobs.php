@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/../../src/Infrastructure/Database.php';
+require_once dirname(dirname(__DIR__)) . '/Infrastructure/Database.php';
 
 use App\Infrastructure\Database;
 

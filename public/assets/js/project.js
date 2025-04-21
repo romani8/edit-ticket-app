@@ -6,7 +6,7 @@
       var $location = $container.find('#location');
   
       $customer.html('<option value="">Select Customer...</option>');
-      $.getJSON('./api/get_customers.php', function (data) {
+      $.getJSON('./api.php?endpoint=get_customers', function (data) {
         $.each(data, function (_, item) {
           $customer.append('<option value="' + item.id + '">' + item.text + '</option>');
         });
@@ -37,7 +37,7 @@
   
         if (!id) return;
   
-        $.getJSON('./api/get_jobs.php', { customer_id: id }, function (data) {
+        $.getJSON('./api.php?endpoint=get_jobs', { customer_id: id }, function (data) {
           $.each(data, function (_, v) {
             $job.append('<option value="' + v.id + '">' + v.name + '</option>');
           });
@@ -50,7 +50,7 @@
   
         if (!id) return;
   
-        $.getJSON('./api/get_locations.php', { job_id: id }, function (data) {
+        $.getJSON('./api.php?endpoint=get_locations', { job_id: id }, function (data) {
           $.each(data, function (_, v) {
             $location.append('<option value="' + v.id + '">' + v.name + '</option>');
           });

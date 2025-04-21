@@ -55,7 +55,7 @@
 
     console.log(JSON.stringify({ project, labour, truck, misc }));
 
-    fetch('./api/save_ticket.php', {
+    fetch('./api.php?endpoint=save_ticket', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ project, labour, truck, misc })
