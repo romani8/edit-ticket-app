@@ -1,5 +1,6 @@
 <?php
 require_once dirname(dirname(__DIR__)) . '/Infrastructure/Database.php';
+
 use App\Infrastructure\Database;
 
 header('Content-Type: application/json');
