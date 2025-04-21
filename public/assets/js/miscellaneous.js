@@ -17,9 +17,24 @@
       var cost = parseFloat($cost.val()) || 0;
       var quantity = parseFloat($quantity.val()) || 0;
       var price = parseFloat($price.val()) || 0;
-      $total.val((cost * quantity * price).toFixed(2));
+      $total.val((quantity * price).toFixed(2));
       calculateMiscSubTotal();
     }
+
+    $cost.on('input', function () {
+      var val = parseFloat(this.value);
+      if (val < 0) this.value = 0;
+    });
+    
+    $price.on('input', function () {
+      var val = parseFloat(this.value);
+      if (val < 0) this.value = 0;
+    });
+    
+    $quantity.on('input', function () {
+      var val = parseFloat(this.value);
+      if (val < 0) this.value = 0;
+    });    
   }
 
   function calculateMiscSubTotal() {

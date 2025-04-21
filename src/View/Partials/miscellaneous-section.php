@@ -16,10 +16,10 @@
       <input type="text" class="form-control misc-desc" name="misc[0][description]">
     </div>
     <div class="col-md-2">
-      <input type="text" class="form-control misc-cost" name="misc[0][cost]">
+      <input type="number" min="0" class="form-control misc-cost" name="misc[0][cost]">
     </div>
     <div class="col-md-2">
-      <input type="text" class="form-control misc-price" name="misc[0][price]">
+      <input type="number" min="0" class="form-control misc-price" name="misc[0][price]">
     </div>
     <div class="col-md-1">
       <input type="number" class="form-control misc-quantity" name="misc[0][quantity]" min="0">

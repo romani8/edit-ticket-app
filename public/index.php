@@ -1,9 +1,6 @@
 <?php
-// require_once __DIR__ . '/../src/Infrastructure/Database.php';
 require_once __DIR__ . '/../src/View/Partials/header.php';
 
-// use App\Infrastructure\Database;
-// $pdo = Database::connect();
 ?>
 
 <div class="container my-4">

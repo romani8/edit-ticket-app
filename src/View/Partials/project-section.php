@@ -20,7 +20,7 @@
 <div class="row align-items-center mb-3 g-2">
     <label for="job" class="col-md-2 col-form-label">Job&nbsp;Name:</label>
     <div class="col-md-3">
-        <select id="job" class="form-select" name="job_id" disabled></select>
+        <select id="job" class="form-select" name="job_id"></select>
     </div>
 
     <div class="col-md-1"></div>
@@ -53,6 +53,6 @@
 <div class="row align-items-center mb-2 g-2">
     <label for="location" class="col-md-2 col-form-label">Location/LSD:</label>
     <div class="col-md-3">
-        <select id="location" class="form-select" name="location_id" disabled></select>
+        <select id="location" class="form-select" name="location_id"></select>
     </div>
 </div>

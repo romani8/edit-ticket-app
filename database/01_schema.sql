@@ -84,7 +84,6 @@ CREATE TABLE ticket_labour (
     overtime_hours DECIMAL(6,2),
     regular_rate DECIMAL(6,2),
     overtime_rate DECIMAL(6,2),
-    -- total DECIMAL(10,2),
     FOREIGN KEY (ticket_id) REFERENCES tickets(id) ON DELETE CASCADE,
     FOREIGN KEY (staff_id) REFERENCES staff(id),
     FOREIGN KEY (staff_position_id) REFERENCES staff_positions(id)

@@ -55,6 +55,8 @@
     });
 
     $quantity.on('input', function () {
+      var val = parseFloat(this.value);
+      if (val < 0) this.value = 0;
       calculateTotal();
     });
 
