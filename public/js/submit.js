@@ -1,6 +1,6 @@
 (function () {
   const $finishButton = $('#finish-button');
-  const nullIfUndefined = val => (val === undefined) ? null : val;
+  const nullIfUndefined = val => (val === undefined || val === '') ? null : val;
 
   $finishButton.on('click', () => {
     const project = {
@@ -20,8 +20,8 @@
     const labour = $('.labour-row').map((_, row) => {
       const $row = $(row);
       return {
-        staff_id: nullIfUndefined($row.find('[name*="[staff]"]').val()),
-        staff_position_id: nullIfUndefined($row.find('[name*="[position]"]').val()),        
+        staff_id: nullIfUndefined($row.find('[name*="[staff_id]"]').val()),
+        staff_position_id: nullIfUndefined($row.find('[name*="[position_id]"]').val()),        
         uom: $row.find('[name*="[uom]"]').val(),
         regular_hours: $row.find('[name*="[reg_hours]"]').val(),
         overtime_hours: $row.find('[name*="[ot_hours]"]').val(),
@@ -34,7 +34,7 @@
     const truck = $('.truck-row').map((_, row) => {
       const $row = $(row);
       return {
-        truck_id: nullIfUndefined($row.find('[name*="[label]"]').val()),
+        truck_id: nullIfUndefined($row.find('[name*="[truck_id]"]').val()),
         uom: $row.find('[name*="[uom]"]').val(),
         quantity: $row.find('[name*="[quantity]"]').val(),
         rate: $row.find('[name*="[rate]"]').val(),

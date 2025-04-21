@@ -21,10 +21,12 @@ try {
         $rate = $uom === 'Hourly' ? $row['hourly_rate'] : $row['fixed_rate'];
 
         $results[] = [
-            'id'    => $row['id'],
-            'text'  => $row['name'],
-            'rate'  => $rate,
-            'uom'   => $uom
+            'id'           => $row['id'],
+            'text'         => $row['name'],
+            'rate'         => $rate,
+            'uom'          => $uom,
+            'hourly_rate'  => $row['hourly_rate'],
+            'fixed_rate'   => $row['fixed_rate']
         ];
     }
 

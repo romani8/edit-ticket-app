@@ -38,7 +38,7 @@
       <input type="number" class="form-control" name="labour[0][ot_hours]" min="0">
     </div>
     <div class="col-md-1">
-      <div class="d-flex gap-1">
+      <div class="d-flex gap-2 ms-3">
         <button type="button" class="btn rounded-circle p-0"
           style="width: 24px; height: 24px; font-size: 14px; border: 1px solid #0dcaf0; color: #0dcaf0;"
           onclick="addLabourRow()">
