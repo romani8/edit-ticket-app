@@ -22,7 +22,7 @@
       <input type="text" class="form-control misc-price" name="misc[0][price]">
     </div>
     <div class="col-md-1">
-      <input type="number" class="form-control misc-qty" name="misc[0][quantity]" min="0">
+      <input type="number" class="form-control misc-quantity" name="misc[0][quantity]" min="0">
     </div>
     <div class="col-md-2">
       <input type="text" class="form-control misc-total" name="misc[0][total]" readonly disabled>
@@ -44,12 +44,11 @@
   </div>
 </div>
 
-<!-- Subtotal -->
 <div class="row mt-2">
   <div class="col-md-6">
     <label class="form-label">Sub Total</label>
   </div>
   <div class="col-md-5 text-end">
-    <input type="text" class="form-control w-auto d-inline-block" id="misc-subtotal" readonly>
+    <input type="text" class="form-control w-auto d-inline-block" id="misc-subtotal" readonly disabled>
   </div>
 </div>

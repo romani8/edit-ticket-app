@@ -51,6 +51,6 @@
     <label class="form-label">Sub Total</label>
   </div>
   <div class="col-md-5 text-end">
-    <input type="text" class="form-control w-auto d-inline-block" id="truck-subtotal" readonly>
+    <input type="text" class="form-control w-auto d-inline-block" id="truck-subtotal" readonly disabled>
   </div>
 </div>

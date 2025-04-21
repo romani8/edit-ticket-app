@@ -4,20 +4,20 @@
     var $desc = $row.find('.misc-desc');
     var $cost = $row.find('.misc-cost');
     var $price = $row.find('.misc-price');
-    var $qty = $row.find('.misc-qty');
+    var $quantity = $row.find('.misc-quantity');
     var $total = $row.find('.misc-total');
 
     $desc.val('');
 
-    $price.add($qty).add($cost).on('input', function () {
+    $price.add($quantity).add($cost).on('input', function () {
       calculateTotal();
     });
 
     function calculateTotal() {
       var cost = parseFloat($cost.val()) || 0;
-      var qty = parseFloat($qty.val()) || 0;
+      var quantity = parseFloat($quantity.val()) || 0;
       var price = parseFloat($price.val()) || 0;
-      $total.val((cost * qty * price).toFixed(2));
+      $total.val((cost * quantity * price).toFixed(2));
       calculateMiscSubTotal();
     }
   }

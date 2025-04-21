@@ -4,7 +4,7 @@
       var $truck = $row.find('.truck-select');
       var $uom = $row.find('.uom-select');
       var $rate = $row.find('.rate');
-      var $qty = $row.find('.quantity');
+      var $quantity = $row.find('.quantity');
       var $total = $row.find('.total');
   
       $truck.html('<option value="">Select Truck...</option>');
@@ -37,14 +37,14 @@
         calculateTotal();
       });
   
-      $qty.on('input', function () {
+      $quantity.on('input', function () {
         calculateTotal();
       });
   
       function calculateTotal() {
-        var qty = parseFloat($qty.val()) || 0;
+        var quantity = parseFloat($quantity.val()) || 0;
         var rate = parseFloat($rate.val()) || 0;
-        $total.val((qty * rate).toFixed(2));
+        $total.val((quantity * rate).toFixed(2));
         calculateTruckSubTotal();
       }
     }
